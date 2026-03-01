@@ -17,13 +17,13 @@ A modern mobile application for booking hair appointments, built with **.NET MAU
       <i>Main Form</i>
     </td>
     <td align="center" style="border: none;">
-      <img src="assets/2.jpg" width="250px"/><br/>
-      <i>Real-time Summary</i>
+      <img src="assets/3.jpg" width="250px"/><br/>
+      <i>Error Dialog</i>
     </td>
     <td align="center" style="border: none;">
-      <img src="assets/3.jpg" width="250px"/><br/>
+      <img src="assets/2.jpg" width="250px"/><br/>
       <i>Success Dialog</i>
-    </td>
+    </td>    
   </tr>
 </table>
 
