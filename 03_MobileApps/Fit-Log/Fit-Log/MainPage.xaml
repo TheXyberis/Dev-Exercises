@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fit_Log.MainPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="10"
+                             Spacing="5">
+            <Label Text="Workout Plan"
+                   FontSize="Title"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold" />
+            <Label Text="User Name:" />
+            <Entry x:Name="nameEntry"
+                   Placeholder="Enter your name"
+                   TextChanged="nameEntry_TextChanged" />
+            <Label Text="Select Exercise:" />
+            <Picker x:Name="exercisePicker"
+                    Title="Pick an exercise"
+                    SelectedIndexChanged="exercisePicker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Cardio</x:String>
+                    <x:String>Gym / Weights</x:String>
+                    <x:String>Yoga</x:String>
+                    <x:String>Running</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Intensity (1-10)" />
+            <Slider x:Name="intensitySlider"
+                    Minimum="1"
+                    Maximum="10"
+                    ValueChanged="intensitySlider_ValueChanged" />
+            <Label x:Name="labelDaysInWeek"
+                   Text="Days per week: 1" />
+            <Stepper x:Name="daysStepper"
+                     Minimum="1"
+                     Maximum="7"
+                     ValueChanged="daysStepper_ValueChanged" />
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Is it outdoors?"
+                       VerticalOptions="Center" />
+                <Switch x:Name="outdoorSwitch"
+                        Toggled="outdoorSwitch_Toggled" />
+            </HorizontalStackLayout>
+            <Label Text="Workout Date:" />
+            <DatePicker x:Name="datePicker"
+                        Format="dd.MM.yyyy"
+                        DateSelected="datePicker_DateSelected" />
+            <Label Text="Start Time:" />
+            <TimePicker x:Name="timePicker"
+                        Format="HH:mm"
+                        PropertyChanged="timePicker_PropertyChanged" />
+            <Label Text="Summary"
+                   FontAttributes="Bold"
+                   Margin="0,15,0,0" />
+            <Label x:Name="summaryLabel" />
+            <Button Text="Save Plan"
+                    Clicked="Button_Clicked"
+                    Margin="0,10,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
