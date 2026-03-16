@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sorting_Performance_Lab.SortingAlgorithms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Sorting_Performance_Lab
     {
         static void Main(string[] args)
         {
+            //BubbleSort.Sort(array);
         }
     }
 }

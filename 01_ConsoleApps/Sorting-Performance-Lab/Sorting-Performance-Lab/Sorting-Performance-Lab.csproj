@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FACCF994-2E3A-483F-A6A9-80ADC07CC05F}</ProjectGuid>
+    <ProjectGuid>{C1819072-2779-42CC-9E93-55664B6D55DF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Sorting_Performance_Lab</RootNamespace>
     <AssemblyName>Sorting-Performance-Lab</AssemblyName>
@@ -45,6 +45,10 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortingAlgorithms\BubbleSort.cs" />
+    <Compile Include="SortingAlgorithms\InsertionSort.cs" />
+    <Compile Include="SortingAlgorithms\QuickSort.cs" />
+    <Compile Include="SortingAlgorithms\SelectionSort.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
