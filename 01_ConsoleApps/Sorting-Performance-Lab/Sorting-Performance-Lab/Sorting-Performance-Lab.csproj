@@ -49,6 +49,7 @@
     <Compile Include="SortingAlgorithms\InsertionSort.cs" />
     <Compile Include="SortingAlgorithms\QuickSort.cs" />
     <Compile Include="SortingAlgorithms\SelectionSort.cs" />
+    <Compile Include="SortingDataGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

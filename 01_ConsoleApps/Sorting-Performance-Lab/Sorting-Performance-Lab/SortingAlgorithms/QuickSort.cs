@@ -8,7 +8,7 @@ namespace Sorting_Performance_Lab.SortingAlgorithms
 {
     internal class QuickSort
     {
-        static void Sort(int[] array, int left, int right)
+        public static void Sort(int[] array, int left, int right)
         {
             int pivot = array[(left + right) / 2];
             int i = left;
@@ -30,7 +30,7 @@ namespace Sorting_Performance_Lab.SortingAlgorithms
                     array[j] = temp;
                     i++;
                     j--;
-                }           
+                }
             }
             if (left < j)
             {
