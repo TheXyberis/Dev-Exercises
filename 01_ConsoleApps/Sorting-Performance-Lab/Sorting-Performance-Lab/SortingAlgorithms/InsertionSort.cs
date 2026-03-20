@@ -13,14 +13,14 @@ namespace Sorting_Performance_Lab.SortingAlgorithms
             int n = array.Length;
             for (int i = 1; i < n; i++)
             {
-                int key = array[i];
-                int j = i - 1;
+                int key = array[i]; // This is the card we just picked up.
+                int j = i - 1; // This is the index of the card immediately to its left.
                 while (j >= 0 && array[j] > key)
                 {
-                    array[j + 1] = array[j];
-                    j--;
+                    array[j + 1] = array[j]; // Move the bigger card one slot to the right.
+                    j--; // Look at the next card to the left.
                 }
-                array[j + 1] = key;
+                array[j + 1] = key; // Now that you've created a gap, you drop your key into that hole.
             }
         }
     }

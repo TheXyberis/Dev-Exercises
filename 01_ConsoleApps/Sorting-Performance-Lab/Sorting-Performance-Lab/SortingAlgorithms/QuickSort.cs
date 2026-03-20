@@ -23,22 +23,24 @@ namespace Sorting_Performance_Lab.SortingAlgorithms
                 {
                     j--;
                 }
-                if (i <= j)
+                if (i <= j) // If the scouts found items that are on the WRONG sides...
                 {
                     int temp = array[i];
                     array[i] = array[j];
                     array[j] = temp;
-                    i++;
+                    i++; // Move scouts inward
                     j--;
                 }
             }
+
+            // Divide and Conquer
             if (left < j)
             {
-                Sort(array, left, j);
+                Sort(array, left, j); // Sort the "Left Team" (smaller items)
             }
             if (i < right)
             {
-                Sort(array, i, right);
+                Sort(array, i, right); // Sort the "Right Team" (larger items)
             }
         }
     }
