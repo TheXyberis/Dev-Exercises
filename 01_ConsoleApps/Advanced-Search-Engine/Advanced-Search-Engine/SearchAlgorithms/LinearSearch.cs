@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace Advanced_Search_Engine.SearchAlgorithms
 {
-    internal class LinearSearch
+    public static class LinearSearch
     {
+        public static int Search(List<string> data, string target)
+        {
+            for (int i = 0; i < data.Count; i++)
+            {
+                if (data[i] == target)
+                {
+                    return i; // found position
+                }
+            }
+            return -1; //not found
+        }
     }
 }

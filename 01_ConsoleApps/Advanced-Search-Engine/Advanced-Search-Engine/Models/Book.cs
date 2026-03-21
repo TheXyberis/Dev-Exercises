@@ -12,7 +12,7 @@ namespace Advanced_Search_Engine.Models
         public string Author { get; set; }
         public override string ToString()
         {
-            return $"{Title} by Author";
+            return $"{Title} by {Author}";
         }
     }
 }
