@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Student_Manager;
+using Student_Manager.Forms;
 
 namespace Student_Manager.Forms
 {
@@ -27,9 +23,9 @@ namespace Student_Manager.Forms
         {
             dgvStudents.AutoGenerateColumns = false;
             dgvStudents.Columns.Clear();
-            dgvStudents.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "First Name", DataPropertyName = "First Name" });
-            dgvStudents.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Last Name", DataPropertyName = "Last Name" });
-            dgvStudents.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Class", DataPropertyName = "Class" });
+            dgvStudents.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "First Name", DataPropertyName = "FirstName" });
+            dgvStudents.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Last Name", DataPropertyName = "LastName" });
+            dgvStudents.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Class", DataPropertyName = "ClassName" });
             dgvStudents.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Age", DataPropertyName = "Age" });
             dgvStudents.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Present", DataPropertyName = "Present" });
         }
@@ -59,7 +55,7 @@ namespace Student_Manager.Forms
         {
             using (StudentForm form = new StudentForm())
             {
-                if (form.ShowDialog() == DialogResult.OK || form.StudentResult != null)
+                if (form.ShowDialog() == DialogResult.OK && form.StudentResult != null)
                 {
                     if (!_repository.AddStudent(form.StudentResult))
                     {
@@ -98,7 +94,7 @@ namespace Student_Manager.Forms
             if (dgvStudents.CurrentRow == null) return;
             int rowIndex = dgvStudents.CurrentRow.Index;
             var visibleList = _repository.FilterStudents(txtSearch.Text, cmbFilterClass.Text);
-            if (rowIndex < 0 || rowIndex > visibleList.Count) return;
+            if (rowIndex < 0 || rowIndex >= visibleList.Count) return;
 
             var student = visibleList[rowIndex];
             var realIndex = _repository.GetAll().FindIndex(s =>

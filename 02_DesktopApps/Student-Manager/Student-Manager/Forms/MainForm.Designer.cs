@@ -64,7 +64,7 @@
             this.stripMenuHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(782, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(894, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,7 +88,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(31, 156);
+            this.btnAdd.Location = new System.Drawing.Point(31, 196);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 1;
@@ -98,7 +98,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(31, 197);
+            this.btnEdit.Location = new System.Drawing.Point(31, 237);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 2;
@@ -108,7 +108,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(31, 243);
+            this.btnDelete.Location = new System.Drawing.Point(31, 283);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;
@@ -118,7 +118,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(31, 287);
+            this.btnSave.Location = new System.Drawing.Point(31, 327);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 4;
@@ -128,7 +128,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(31, 327);
+            this.btnLoad.Location = new System.Drawing.Point(31, 367);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 5;
@@ -144,7 +144,7 @@
             this.lblAverageAge});
             this.statusStrip1.Location = new System.Drawing.Point(0, 527);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(782, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(894, 26);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -214,11 +214,11 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dgvStudents.Location = new System.Drawing.Point(173, 92);
+            this.dgvStudents.Location = new System.Drawing.Point(137, 95);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RowHeadersWidth = 51;
             this.dgvStudents.RowTemplate.Height = 24;
-            this.dgvStudents.Size = new System.Drawing.Size(561, 402);
+            this.dgvStudents.Size = new System.Drawing.Size(720, 402);
             this.dgvStudents.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn1
@@ -253,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(894, 553);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.btnClear);

@@ -28,13 +28,13 @@ namespace Student_Manager
 
         public void UpdateStudent(int index, Student student)
         {
-            if (index < 0 || index > _students.Count) return;
+            if (index < 0 || index >= _students.Count) return;
             _students[index] = student;
         }
 
         public void DeleteStudent(int index)
         {
-            if (index < 0 || index > _students.Count) return;
+            if (index < 0 || index >= _students.Count) return;
             _students.RemoveAt(index);
         }
 
@@ -43,7 +43,7 @@ namespace Student_Manager
             if (_students.Count < 2) return;
             for (int i = 0; i < _students.Count - 1; i++)
             {
-                for (int j = 0; j < _students.Count - 1 - i; i++)
+                for (int j = 0; j < _students.Count - 1 - i; j++)
                 {
                     string currentLastName = _students[j].LastName;
                     string nextLastName = _students[j + 1].LastName;
@@ -64,7 +64,7 @@ namespace Student_Manager
             return _students.Where(s =>
                 (string.IsNullOrWhiteSpace(searchText) ||
                 s.FirstName.ToLower().Contains(search) ||
-                s.LastName.Contains(search))
+                s.LastName.ToLower().Contains(search))
                 &&
                 (string.IsNullOrEmpty(classFilter) || classFilter == "All" || s.ClassName == classFilter)).ToList();
         }
@@ -81,7 +81,7 @@ namespace Student_Manager
                 sum = sum + s.Age;
             }
 
-            return sum / _students.Count;
+            return (double)sum / _students.Count;
         }
 
         public void SaveStudentsToFile(string path)
