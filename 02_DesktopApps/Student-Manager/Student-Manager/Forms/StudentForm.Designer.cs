@@ -38,10 +38,10 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.comboBoxCLass = new System.Windows.Forms.ComboBox();
-            this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
+            this.nudAge = new System.Windows.Forms.NumericUpDown();
             this.cbPresent = new System.Windows.Forms.CheckBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAge)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -107,6 +107,7 @@
             this.btnOk.TabIndex = 6;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
@@ -116,6 +117,7 @@
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // textBoxFirstName
             // 
@@ -132,12 +134,12 @@
             this.comboBoxCLass.Size = new System.Drawing.Size(172, 24);
             this.comboBoxCLass.TabIndex = 10;
             // 
-            // numericUpDownAge
+            // nudAge
             // 
-            this.numericUpDownAge.Location = new System.Drawing.Point(165, 204);
-            this.numericUpDownAge.Name = "numericUpDownAge";
-            this.numericUpDownAge.Size = new System.Drawing.Size(99, 22);
-            this.numericUpDownAge.TabIndex = 11;
+            this.nudAge.Location = new System.Drawing.Point(165, 204);
+            this.nudAge.Name = "nudAge";
+            this.nudAge.Size = new System.Drawing.Size(99, 22);
+            this.nudAge.TabIndex = 11;
             // 
             // cbPresent
             // 
@@ -163,7 +165,7 @@
             this.ClientSize = new System.Drawing.Size(382, 353);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.cbPresent);
-            this.Controls.Add(this.numericUpDownAge);
+            this.Controls.Add(this.nudAge);
             this.Controls.Add(this.comboBoxCLass);
             this.Controls.Add(this.textBoxFirstName);
             this.Controls.Add(this.btnCancel);
@@ -176,8 +178,7 @@
             this.Controls.Add(this.label1);
             this.Name = "StudentForm";
             this.Text = "StudentForm";
-            this.Load += new System.EventHandler(this.StudentForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,7 +196,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.ComboBox comboBoxCLass;
-        private System.Windows.Forms.NumericUpDown numericUpDownAge;
+        private System.Windows.Forms.NumericUpDown nudAge;
         private System.Windows.Forms.CheckBox cbPresent;
         private System.Windows.Forms.TextBox textBoxLastName;
     }
