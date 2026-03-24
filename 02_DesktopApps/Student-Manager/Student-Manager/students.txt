@@ -1,0 +1,10 @@
+John;Doe;1A;16;True
+Jane;Smith;1B;15;True
+Michael;Brown;2A;17;False
+Emily;Davis;2B;16;True
+William;Wilson;3A;18;True
+Olivia;Taylor;3B;17;False
+James;Anderson;1A;15;True
+Sophia;Thomas;2A;16;False
+Liam;Moore;3A;19;True
+Isabella;Martin;2B;17;True

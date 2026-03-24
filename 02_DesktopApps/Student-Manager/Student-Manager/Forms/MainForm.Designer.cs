@@ -38,21 +38,21 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTotal = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblAverageAge = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbFilterClass = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -71,19 +71,19 @@
             // stripMenuFile
             // 
             this.stripMenuFile.Name = "stripMenuFile";
-            this.stripMenuFile.Size = new System.Drawing.Size(46, 26);
+            this.stripMenuFile.Size = new System.Drawing.Size(46, 24);
             this.stripMenuFile.Text = "File";
             // 
             // stripMenuEdit
             // 
             this.stripMenuEdit.Name = "stripMenuEdit";
-            this.stripMenuEdit.Size = new System.Drawing.Size(49, 26);
+            this.stripMenuEdit.Size = new System.Drawing.Size(49, 24);
             this.stripMenuEdit.Text = "Edit";
             // 
             // stripMenuHelp
             // 
             this.stripMenuHelp.Name = "stripMenuHelp";
-            this.stripMenuHelp.Size = new System.Drawing.Size(55, 26);
+            this.stripMenuHelp.Size = new System.Drawing.Size(55, 24);
             this.stripMenuHelp.Text = "Help";
             // 
             // btnAdd
@@ -94,6 +94,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -103,6 +104,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -112,6 +114,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -121,6 +124,7 @@
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnLoad
             // 
@@ -130,30 +134,31 @@
             this.btnLoad.TabIndex = 5;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
+            this.lblTotal,
+            this.lblAverageAge});
             this.statusStrip1.Location = new System.Drawing.Point(0, 527);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(782, 26);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // lblTotal
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(110, 20);
-            this.toolStripStatusLabel1.Text = "Total Students: ";
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(110, 20);
+            this.lblTotal.Text = "Total Students: ";
             // 
-            // toolStripStatusLabel2
+            // lblAverageAge
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(102, 20);
-            this.toolStripStatusLabel2.Text = "Average Age: ";
+            this.lblAverageAge.Name = "lblAverageAge";
+            this.lblAverageAge.Size = new System.Drawing.Size(102, 20);
+            this.lblAverageAge.Text = "Average Age: ";
             // 
             // txtSearch
             // 
@@ -161,6 +166,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 22);
             this.txtSearch.TabIndex = 7;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // cmbFilterClass
             // 
@@ -169,6 +175,7 @@
             this.cmbFilterClass.Name = "cmbFilterClass";
             this.cmbFilterClass.Size = new System.Drawing.Size(74, 24);
             this.cmbFilterClass.TabIndex = 8;
+            this.cmbFilterClass.SelectedIndexChanged += new System.EventHandler(this.cmbFilterClass_SelectedIndexChanged);
             // 
             // btnSearch
             // 
@@ -178,6 +185,7 @@
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnClear
             // 
@@ -187,6 +195,7 @@
             this.btnClear.TabIndex = 10;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // lblSearch
             // 
@@ -197,20 +206,20 @@
             this.lblSearch.TabIndex = 12;
             this.lblSearch.Text = "Search";
             // 
-            // dataGridView2
+            // dgvStudents
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridView2.Location = new System.Drawing.Point(173, 92);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(561, 402);
-            this.dataGridView2.TabIndex = 13;
+            this.dgvStudents.Location = new System.Drawing.Point(173, 92);
+            this.dgvStudents.Name = "dgvStudents";
+            this.dgvStudents.RowHeadersWidth = 51;
+            this.dgvStudents.RowTemplate.Height = 24;
+            this.dgvStudents.Size = new System.Drawing.Size(561, 402);
+            this.dgvStudents.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -245,7 +254,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 553);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSearch);
@@ -266,7 +275,7 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,14 +293,14 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel lblTotal;
+        private System.Windows.Forms.ToolStripStatusLabel lblAverageAge;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cmbFilterClass;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
