@@ -18,6 +18,14 @@ namespace Student_Manager.Forms
         public StudentForm()
         {
             InitializeComponent();
+
+            comboBoxCLass.Items.Clear();
+            comboBoxCLass.Items.AddRange(new object[] { "1A", "1B", "2A", "2B", "3A", "3B" });
+
+            nudAge.Minimum = 6;
+            nudAge.Maximum = 21;
+
+            cbPresent.Checked = true;
         }
 
         //overloaded constructor
