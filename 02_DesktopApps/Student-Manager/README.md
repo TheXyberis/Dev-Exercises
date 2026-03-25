@@ -1,7 +1,6 @@
 # StudentManager — Desktop Student Management App
 
-A simple Windows Forms (WinForms) application for managing students.  
-Built for educational purposes (INF.04 / technical school project in Poland).  
+A simple Windows Forms (WinForms) application for managing students. 
 
 ---
 
@@ -49,12 +48,10 @@ Built for educational purposes (INF.04 / technical school project in Poland).
 
 ## Screenshots
 
-Place screenshots of your app here to show functionality:
-
-![Screenshot 1](assets/screen1.png)  
-![Screenshot 2](assets/screen2.png)  
-
-> You can create a `screenshots` folder in your project and add images there.  
+<div style="display: flex; gap: 10px;">
+  <img src="assets/screen1.png" alt="Screenshot 1" width="400"/>
+  <img src="assets/screen2.png" alt="Screenshot 2" width="390"/>
+</div> 
 
 ---
 
