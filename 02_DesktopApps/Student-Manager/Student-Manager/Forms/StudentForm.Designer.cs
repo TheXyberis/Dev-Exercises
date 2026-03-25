@@ -177,6 +177,7 @@
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.label1);
             this.Name = "StudentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentForm";
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).EndInit();
             this.ResumeLayout(false);
