@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Habit_Pulse.Pages.AddHabitPage"
+             Title="Add Habit">
+    <VerticalStackLayout Padding="20"
+                         Spacing="12">
+        <Label Text="Add new habit"
+               FontSize="24"
+               FontAttributes="Bold" />
+        <Entry x:Name="NameEntry"
+               Placeholder="Habit name" />
+        <Picker x:Name="CategoryPicker"
+                Title="Category">
+            <Picker.Items>
+                <x:String>Health</x:String>
+                <x:String>Study</x:String>
+                <x:String>Sport</x:String>
+                <x:String>Other</x:String>
+            </Picker.Items>
+        </Picker>
+        <DatePicker x:Name="StartDatePicker" />
+        <Button Text="Save"
+                Clicked="Save_Clicked" />
+    </VerticalStackLayout>
+</ContentPage>

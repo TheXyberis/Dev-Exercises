@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Habit_Pulse.Pages.HabitDetailsPage"
+             Title="Habit Details">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="12">
+            <Label Text="Habit Details"
+                   FontSize="24"
+                   FontAttributes="Bold" />
+            <Entry x:Name="NameEntry"
+                   Placeholder="Habit name" />
+            <Picker x:Name="CategoryPicker"
+                    Title="Category">
+                <Picker.Items>
+                    <x:String>Health</x:String>
+                    <x:String>Study</x:String>
+                    <x:String>Sport</x:String>
+                    <x:String>Work</x:String>
+                    <x:String>Other</x:String>
+                </Picker.Items>
+            </Picker>
+            <DatePicker x:Name="StartDatePicker" />
+            <Label x:Name="CurrentStreakLabel"
+                   FontSize="16" />
+            <Label x:Name="LongestStreakLabel"
+                   FontSize="16" />
+            <Label x:Name="StatusLabel"
+                   FontSize="16" />
+            <Button Text="Mark as Done"
+                    Clicked="MarkDone_Clicked" />
+            <Button Text="Save Changes"
+                    Clicked="SaveChanges_Clicked" />
+            <Button Text="Delete Habit"
+                    BackgroundColor="DarkRed"
+                    TextColor="White"
+                    Clicked="Delete_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

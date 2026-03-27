@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Habit_Pulse.Pages.HabitsPage"
+             Title="Habits">
+    <VerticalStackLayout Padding="20"
+                         Spacing="12">
+        <Label Text="HabitPulse"
+               FontSize="28"
+               FontAttributes="Bold" />
+        <Picker x:Name="FilterPicker"
+                Title="Filter"
+                SelectedIndexChanged="FilterPicker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>All</x:String>
+                <x:String>Today</x:String>
+                <x:String>Completed</x:String>
+                <x:String>Missed</x:String>
+            </Picker.Items>
+        </Picker>
+        <CollectionView x:Name="HabitsList"
+                        SelectionMode="Single"
+                        SelectionChanged="HabitsList_SelectionChanged">
+            <CollectionView.EmptyView>
+                <Label Text="No habits yet"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Margin="0,40,0,0" />
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="14"
+                            Margin="0,0,0,12"
+                            StrokeThickness="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="16" />
+                        </Border.StrokeShape>
+                        <Border.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS, Android"
+                                    Value="#FFF6D6" />
+                                <On Platform="WinUI"
+                                    Value="#FFF6D6" />
+                            </OnPlatform>
+                        </Border.BackgroundColor>
+                        <Border.Triggers>
+                            <DataTrigger TargetType="Border"
+                                         Binding="{Binding IsDoneToday}"
+                                         Value="True">
+                                <Setter Property="BackgroundColor"
+                                        Value="#DFF5E1" />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Border"
+                                         Binding="{Binding IsMissed}"
+                                         Value="True">
+                                <Setter Property="BackgroundColor"
+                                        Value="#FCE2E1" />
+                            </DataTrigger>
+                        </Border.Triggers>
+                        <Grid RowDefinitions="Auto, Auto, Auto"
+                              ColumnDefinitions="*,Auto">
+                            <Label Text="{Binding Name}"
+                                   FontSize="18"
+                                   FontAttributes="Bold" />
+                            <Label Grid.Column="1"
+                                   Text="{Binding StatusText}"
+                                   FontSize="12"
+                                   VerticalOptions="Center" />
+                            <Label Grid.Row="1"
+                                   Text="{Binding Category, StringFormat='Category: {0}'}"
+                                   FontSize="13" />
+                            <Label Grid.Row="2"
+                                   Text="{Binding CurrentStreak, StringFormat='Streak: {0}'}"
+                                   FontSize="13" />
+                            <Button Grid.Row="2"
+                                    Grid.Column="1"
+                                    Text="Done"
+                                    Clicked="DoneButton_Clicked"
+                                    Padding="14,6" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Grid ColumnDefinitions="*,*"
+              ColumnSpacing="10">
+            <Button Text="Add Habit"
+                    Clicked="AddHabit_Clicked" />
+            <Button Grid.Column="1"
+                    Text="Stats"
+                    Clicked="Stats_Clicked" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

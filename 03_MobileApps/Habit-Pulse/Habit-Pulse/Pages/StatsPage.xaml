@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Habit_Pulse.Pages.StatsPage"
+             Title="Stats">
+    <VerticalStackLayout Padding="20"
+                         Spacing="12">
+        <Label Text="Statistics"
+               FontSize="24"
+               FontAttributes="Bold" />
+        <Label x:Name="TotalLabel"
+               FontSize="18" />
+        <Label x:Name="DoneTotalLabel"
+               FontSize="18" />
+        <Label x:Name="PercentLabel"
+               FontSize="18" />
+        <Label x:Name="LongestLabel"
+               FontSize="18" />
+        <Button Text="Refresh"
+                Clicked="Refresh_Clicked" />
+    </VerticalStackLayout>
+</ContentPage>
