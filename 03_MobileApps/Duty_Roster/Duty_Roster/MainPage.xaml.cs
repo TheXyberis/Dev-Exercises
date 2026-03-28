@@ -4,7 +4,7 @@ namespace Duty_Roster
 {
     public partial class MainPage : ContentPage
     {
-        ObservableCollection<DutyAssignment> schedule = new ObservableCollection<DutyAssignment>();
+        public ObservableCollection<DutyAssignment> schedule { get; set; } = new();
         List<string> students = new List<string>
         {
             "John",
@@ -15,6 +15,15 @@ namespace Duty_Roster
         };
 
         List<string> days = new List<string>
+        {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+        };
+
+        List<string> daysOrder = new List<string>
         {
             "Monday",
             "Tuesday",
@@ -52,11 +61,13 @@ namespace Duty_Roster
                     return;
                 }
                 existingAssignment.Student = selectedStudent;
+                SortScheduleByDay();
                 schedlueView.ItemsSource = null;
                 schedlueView.ItemsSource = schedule;
                 return;
             }
             schedule.Add(new DutyAssignment { Day = selectedDay, Student = selectedStudent });
+            SortScheduleByDay();
         }
 
         private async void DeleteDuty_Clicked(object sender, EventArgs e)
@@ -68,7 +79,26 @@ namespace Duty_Roster
                 return;
             }
             schedule.Remove(selectedItem);
+            SortScheduleByDay();
             schedlueView.SelectedItem = null;
+        }
+
+        void SortScheduleByDay()
+        {
+            for (int i = 0; i < schedule.Count - 1; i++)
+            {
+                for (int j = 0; j < schedule.Count - i - 1; j++)
+                {
+                    int currentDay = daysOrder.IndexOf(schedule[j].Day);
+                    int nextDay = daysOrder.IndexOf(schedule[j + 1].Day);
+                    if (nextDay < currentDay)
+                    {
+                        var temp = schedule[j];
+                        schedule[j] = schedule[j + 1];
+                        schedule[j + 1] = temp;
+                    }
+                }
+            }
         }
     }
 }
