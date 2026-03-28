@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Duty_Roster.MainPage"
+             Title="Duty Roster">
+    <ScrollView>
+        <VerticalStackLayout Padding="20,0"
+                             Spacing="15">
+            <Label Text="Duty Schedule"
+                   FontSize="26"
+                   HorizontalOptions="Center" />
+            <Label Text="Select Day" />
+            <Picker x:Name="DayPicker"
+                    Title="Choose day" />
+            <Label Text="Select Student" />
+            <Picker x:Name="studentPicker"
+                    Title="Choose student" />
+            <Button Text="Assign duty"
+                    Clicked="AssignDuty_Clicked" />
+            <Button Text="Delete Selected Assignment"
+                    Clicked="DeleteDuty_Clicked" />
+            <Label Text="Schedule"
+                   FontSize="20" />
+            <CollectionView x:Name="schedlueView"
+                            SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray"
+                               Padding="10"
+                               Margin="2"
+                               InputTransparent="True">
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding Day}"
+                                       FontAttributes="Bold"
+                                       WidthRequest="120" />
+                                <Label Text="{Binding Student}" />
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
